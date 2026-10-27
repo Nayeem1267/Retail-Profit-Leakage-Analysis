@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102332">
+<title>Retail Profit Leakage Analysis | Analytics Portfolio</title>
+<style>
+:root{--ink:#172b3a;--muted:#5e6e79;--navy:#102332;--teal:#0b7890;--mint:#d9f1ed;--paper:#f4f7f7;--line:#dce5e8;--white:#fff;--gold:#e3ad49;--coral:#c95b4c;--shadow:0 18px 48px rgba(16,35,50,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.55}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:23px 0}.brand{font-size:.83rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:#dce8ed}.brand b{color:#77d3c6}.nav{display:flex;gap:24px}.nav a{font-size:.88rem;color:#d3e0e5;text-decoration:none}.nav a:hover{color:#77d3c6}.hero{background:radial-gradient(ellipse at 80% 0%,#28566a 0,transparent 45%),linear-gradient(135deg,#102332,#183848 72%,#174e5a);color:white;padding-bottom:72px}.hero-copy{padding:52px 0 34px;max-width:790px}.eyebrow{color:#9de0d4;text-transform:uppercase;letter-spacing:.16em;font-size:.77rem;font-weight:750}.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.045em;margin:16px 0 19px;max-width:850px}.hero p{max-width:730px;color:#d4e1e5;font-size:1.08rem;margin:0}.hero-meta{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}.pill{border:1px solid #63818d;background:#193c4b;color:#e6f2f3;padding:7px 12px;border-radius:999px;font-size:.78rem}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:-103px;position:relative}.kpi{background:white;border-radius:14px;padding:21px 22px;box-shadow:var(--shadow);border:1px solid #e7eef0;min-height:114px}.kpi label{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:750}.kpi strong{display:block;font-size:clamp(1.35rem,3vw,1.85rem);letter-spacing:-.04em;margin:7px 0 1px;color:var(--navy)}.kpi small{color:var(--muted)}main{padding-top:139px}.section{padding:28px 0 36px;scroll-margin-top:24px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:19px}.section h2{font-size:1.75rem;letter-spacing:-.035em;margin:5px 0;color:var(--navy)}.section-intro{max-width:650px;color:var(--muted);margin:0}.kicker{color:var(--teal);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}.grid{display:grid;gap:18px}.grid.two{grid-template-columns:1.1fr .9fr}.card{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:0 7px 22px rgba(16,35,50,.045);padding:24px}.card h3{font-size:1.1rem;letter-spacing:-.015em;margin:0 0 6px;color:var(--navy)}.card p{margin:0;color:var(--muted)}.chart{margin-top:20px}.barrow{display:grid;grid-template-columns:minmax(105px,150px) 1fr 58px;align-items:center;gap:12px;margin:15px 0;font-size:.88rem}.barlabel{font-weight:650}.track{height:12px;border-radius:9px;background:#edf2f4;overflow:hidden}.bar{height:100%;border-radius:9px;background:linear-gradient(90deg,var(--teal),#40b9a9)}.bar.gold{background:linear-gradient(90deg,#d19130,#edc968)}.bar.red{background:linear-gradient(90deg,#b94d47,#e29474)}.barvalue{text-align:right;font-variant-numeric:tabular-nums;font-weight:750;color:var(--navy)}.caption{font-size:.79rem;color:var(--muted);margin-top:15px!important}.statline{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding-top:13px;margin-top:17px;font-size:.9rem}.statline b{color:var(--navy)}.table-wrap{overflow-x:auto;margin-top:18px}table{width:100%;border-collapse:collapse;font-size:.9rem}th{text-align:left;color:#63737e;text-transform:uppercase;font-size:.71rem;letter-spacing:.08em;padding:10px 12px;border-bottom:1px solid var(--line)}td{padding:12px;border-bottom:1px solid #edf1f2;font-variant-numeric:tabular-nums}td.num{text-align:right}td.name{font-weight:650}.badge{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:5px 9px;background:#fff1ec;color:#9b463b;font-weight:750;font-size:.76rem}.dot{width:7px;height:7px;border-radius:50%;background:var(--coral)}.note{border-left:3px solid var(--gold);background:#fff9eb;padding:15px 17px;border-radius:0 10px 10px 0;color:#554628;font-size:.9rem;margin-top:17px}.insight-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.insight{background:white;border:1px solid var(--line);border-radius:14px;padding:19px}.insight .number{font-size:1.75rem;color:var(--teal);font-weight:800;letter-spacing:-.05em}.insight h3{margin:4px 0 7px;font-size:1rem;color:var(--navy)}.insight p{margin:0;color:var(--muted);font-size:.89rem}.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}.action{background:white;border:1px solid var(--line);border-radius:14px;padding:20px 21px}.action .num{display:inline-flex;width:29px;height:29px;align-items:center;justify-content:center;background:var(--mint);border-radius:9px;color:#075c65;font-weight:800;font-size:.83rem}.action h3{margin:12px 0 6px;font-size:1rem;color:var(--navy)}.action p{margin:0;color:var(--muted);font-size:.9rem}.owner{margin-top:13px;color:var(--teal);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.deliverables{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}.file{display:flex;align-items:center;justify-content:space-between;gap:18px;text-decoration:none;background:white;border:1px solid var(--line);border-radius:14px;padding:19px 20px;color:var(--ink);transition:transform .15s,border-color .15s}.file:hover{transform:translateY(-2px);border-color:#74bcb4}.file strong{display:block;color:var(--navy)}.file span{display:block;font-size:.82rem;color:var(--muted);margin-top:3px}.file .arrow{font-size:1.4rem;color:var(--teal)}.method{background:var(--navy);color:#d8e4e8;border-radius:16px;padding:22px 25px;margin-top:16px}.method strong{display:block;color:#9de0d4;margin-bottom:6px}.method p{margin:0;font-size:.9rem}.footer{margin-top:25px;border-top:1px solid var(--line);padding:23px 0 34px;display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:.82rem}.footer a{color:var(--teal);text-decoration:none}.small{font-size:.8rem;color:var(--muted)}
+@media(max-width:800px){.grid.two{grid-template-columns:1fr}.insight-list{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}main{padding-top:135px}.nav{gap:12px}.nav a{font-size:.8rem}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1120px)}.nav{display:none}.hero-copy{padding-top:37px}.hero{padding-bottom:62px}.kpi{padding:16px;min-height:100px}.kpi strong{font-size:1.35rem}.actions,.deliverables{grid-template-columns:1fr}.barrow{grid-template-columns:105px 1fr 50px;gap:8px}.card{padding:19px}.footer{flex-direction:column}}
+@media print{body{background:#fff}.hero{background:#102332!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.kpis{margin-bottom:0}.kpi,.card,.insight,.action,.file{box-shadow:none;break-inside:avoid}main{padding-top:30px}.section{padding:16px 0}.nav{display:none}.file{color:var(--ink)}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar"><div class="brand"><b>◆</b> Analytics Portfolio</div><nav class="nav" aria-label="Main navigation"><a href="#overview">Overview</a><a href="#findings">Findings</a><a href="#actions">Action plan</a><a href="#files">Project files</a></nav></div>
+    <div class="hero-copy">
+      <div class="eyebrow">Retail analytics · Tableau case study</div>
+      <h1>Retail Profit Leakage Analysis</h1>
+      <p>A profitability review of 15,000 retail transactions to locate where margin is strongest, where losses occur, and what to test next.</p>
+      <div class="hero-meta"><span class="pill">Data period · Jan 2024–Dec 2025</span><span class="pill">15,000 transactions</span><span class="pill">Tableau · SQL · Python</span></div>
+    </div>
+    <section class="kpis" id="overview" aria-label="Project key performance indicators">
+      <article class="kpi"><label>Net sales</label><strong>₹61.56M</strong><small>₹61,561,351.66</small></article>
+      <article class="kpi"><label>Total profit</label><strong>₹20.31M</strong><small>₹20,311,566.15</small></article>
+      <article class="kpi"><label>Profit margin</label><strong>32.99%</strong><small>Profit ÷ net sales</small></article>
+      <article class="kpi"><label>Loss transactions</label><strong>42</strong><small>Profit below zero</small></article>
+    </section>
+  </div>
+</header>
+<main class="wrap">
+  <section class="section" id="findings">
+    <div class="section-head"><div><div class="kicker">01 · Performance</div><h2>Where profit is being made</h2></div><p class="section-intro">The category and discount views help separate high sales from healthy unit economics. Electronics is the clearest area to investigate.</p></div>
+    <div class="grid two">
+      <article class="card">
+        <h3>Profit margin by category</h3><p>Category margin varies from 22.70% to 45.52%.</p>
+        <div class="chart" role="img" aria-label="Category profit margin bars: Clothing 45.52 percent, Sports 40.99 percent, Home and Kitchen 37.34 percent, Office Supplies 29.45 percent, Electronics 22.70 percent.">
+          <div class="barrow"><span class="barlabel">Clothing</span><div class="track"><div class="bar" style="width:91.04%"></div></div><span class="barvalue">45.52%</span></div>
+          <div class="barrow"><span class="barlabel">Sports</span><div class="track"><div class="bar" style="width:81.98%"></div></div><span class="barvalue">40.99%</span></div>
+          <div class="barrow"><span class="barlabel">Home &amp; Kitchen</span><div class="track"><div class="bar" style="width:74.68%"></div></div><span class="barvalue">37.34%</span></div>
+          <div class="barrow"><span class="barlabel">Office Supplies</span><div class="track"><div class="bar" style="width:58.9%"></div></div><span class="barvalue">29.45%</span></div>
+          <div class="barrow"><span class="barlabel">Electronics</span><div class="track"><div class="bar red" style="width:45.4%"></div></div><span class="barvalue">22.70%</span></div>
+        </div>
+        <div class="statline"><span>Electronics net sales</span><b>₹28.33M · 46.0% of total</b></div>
+      </article>
+      <article class="card">
+        <h3>Margin by discount quartile</h3><p>Equal-sized groups of 3,750 transactions, ordered by discount.</p>
+        <div class="chart" role="img" aria-label="Margin decreases across discount quartiles: Q1 39.30 percent at 2.57 percent average discount, Q2 35.48 percent at 8.99 percent, Q3 31.12 percent at 13.95 percent, Q4 23.67 percent at 23.15 percent.">
+          <div class="barrow"><span class="barlabel">Q1 · 2.57% off</span><div class="track"><div class="bar" style="width:78.6%"></div></div><span class="barvalue">39.30%</span></div>
+          <div class="barrow"><span class="barlabel">Q2 · 8.99% off</span><div class="track"><div class="bar" style="width:70.96%"></div></div><span class="barvalue">35.48%</span></div>
+          <div class="barrow"><span class="barlabel">Q3 · 13.95% off</span><div class="track"><div class="bar" style="width:62.24%"></div></div><span class="barvalue">31.12%</span></div>
+          <div class="barrow"><span class="barlabel">Q4 · 23.15% off</span><div class="track"><div class="bar gold" style="width:47.34%"></div></div><span class="barvalue">23.67%</span></div>
+        </div>
+        <div class="note">Q4 margin is 15.63 percentage points below Q1. This is a historical association, not proof that discounts caused lower margin.</div>
+      </article>
+    </div>
+    <div class="insight-list">
+      <article class="insight"><div class="number">42</div><h3>Loss-making transactions</h3><p>All occurred in Electronics. Investigate order-level discount, cost, quantity, and sales channel before changing the product range.</p></article>
+      <article class="insight"><div class="number">13</div><h3>Mouse orders to review first</h3><p>Mouse had the most loss transactions, followed by Headphones (10), Keyboard (8), Bluetooth Speaker (8), and Monitor (3).</p></article>
+      <article class="insight"><div class="number">₹3.05M</div><h3>Q4 still made a profit</h3><p>The highest-discount quartile remained profitable overall. The priority is testing better offer economics, not assuming every discount loses money.</p></article>
+    </div>
+    <article class="card" style="margin-top:18px">
+      <h3>Category performance</h3><p>Sales, profit, and margin together show the trade-offs behind the headline totals.</p>
+      <div class="table-wrap"><table><thead><tr><th>Category</th><th style="text-align:right">Net sales</th><th style="text-align:right">Profit</th><th style="text-align:right">Margin</th></tr></thead><tbody>
+        <tr><td class="name">Clothing</td><td class="num">₹16.16M</td><td class="num">₹7.36M</td><td class="num">45.52%</td></tr>
+        <tr><td class="name">Electronics</td><td class="num">₹28.33M</td><td class="num">₹6.43M</td><td class="num">22.70%</td></tr>
+        <tr><td class="name">Home &amp; Kitchen</td><td class="num">₹7.76M</td><td class="num">₹2.90M</td><td class="num">37.34%</td></tr>
+        <tr><td class="name">Office Supplies</td><td class="num">₹1.65M</td><td class="num">₹0.49M</td><td class="num">29.45%</td></tr>
+        <tr><td class="name">Sports</td><td class="num">₹7.66M</td><td class="num">₹3.14M</td><td class="num">40.99%</td></tr>
+      </tbody></table></div>
+    </article>
+    <article class="card" style="margin-top:18px">
+      <h3>Dashboard views</h3><p>The Tableau workbook brings together the core category, product, time, and KPI views:</p>
+      <div class="hero-meta" style="margin-top:14px"><span class="pill" style="background:#eef6f6;color:#24505a;border-color:#d9e7e8">Revenue vs Profit by Category</span><span class="pill" style="background:#eef6f6;color:#24505a;border-color:#d9e7e8">Profit Margin by Category</span><span class="pill" style="background:#eef6f6;color:#24505a;border-color:#d9e7e8">Monthly Revenue Trend</span><span class="pill" style="background:#eef6f6;color:#24505a;border-color:#d9e7e8">Discount by Product</span><span class="pill" style="background:#eef6f6;color:#24505a;border-color:#d9e7e8">Four KPI sheets</span></div>
+    </article>
+  </section>
+  <section class="section" id="actions">
+    <div class="section-head"><div><div class="kicker">02 · From insight to action</div><h2>A focused 30-day plan</h2></div><p class="section-intro">Start with the 42 loss orders, then run a controlled discount test and add a weekly exception review.</p></div>
+    <div class="actions">
+      <article class="action"><span class="num">01</span><h3>Classify the 42 loss orders</h3><p>Review product, discount, region, channel, quantity, and unit cost. Tag each loss with a reason such as promotion, price override, cost mismatch, or data issue.</p><div class="owner">Weeks 1–2 · Pricing + Finance</div></article>
+      <article class="action"><span class="num">02</span><h3>Test Electronics offer guardrails</h3><p>Compare a lower discount tier or approval step for deeper promotions with a matched baseline. Track profit per order and conversion together.</p><div class="owner">Weeks 2–4 · Commercial + Pricing</div></article>
+      <article class="action"><span class="num">03</span><h3>Monitor order-level exceptions</h3><p>Review negative-profit orders and discount exceptions weekly, with product, region, and channel drilldowns. Track loss count and total negative profit.</p><div class="owner">Weekly · BI + Finance</div></article>
+      <article class="action"><span class="num">04</span><h3>Protect total business performance</h3><p>Review category sales, profit, margin, and discount quartiles together. Set discount thresholds only after confirming cost and promotion economics.</p><div class="owner">Monthly · Category leads</div></article>
+    </div>
+    <div class="method"><strong>How to interpret the analysis</strong><p>These are descriptive summaries from the existing retail sales data. Product groups remain profitable in aggregate even when some individual transactions lose money. Discount guardrails are a test to validate, not a guaranteed outcome.</p></div>
+  </section>
+  <section class="section" id="files">
+    <div class="section-head"><div><div class="kicker">03 · Work products</div><h2>Explore the project files</h2></div><p class="section-intro">The Tableau workbook, executive action plan, and Python analysis companion are available with this portfolio page.</p></div>
+    <div class="deliverables">
+      <a class="file" href="./Retail%20Profit%20Leakage%20Analysis.twb"><div><strong>Tableau dashboard workbook</strong><span>Retail Profit Leakage Analysis · TWB</span></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="file" href="./Retail%20Profit%20Leakage%20Action%20Plan.docx"><div><strong>Executive action plan</strong><span>Verified findings and 30-day recommendations · DOCX</span></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="file" href="./python/retail_profit_analysis.py"><div><strong>Python analysis script</strong><span>Rebuilds KPI and leakage summaries from a local CSV export</span></div><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="file" href="./python/README.md"><div><strong>Python setup and method</strong><span>Input fields, run steps, and quartile tie handling</span></div><span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+    <p class="small" style="margin-top:12px">The Tableau workbook connects to the existing local MySQL data source. The Python companion reads a CSV export locally. Source rows are not included in the portfolio files.</p>
+  </section>
+  <footer class="footer"><span>Retail Profit Leakage Analysis · Portfolio case study</span><a href="#overview">Back to top ↑</a></footer>
+</main>
+</body>
+</html>
